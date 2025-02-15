@@ -157,21 +157,6 @@ Run all tests:
 python -m unittest discover tests
 ```
 
-## **🚀 Installation as a Package**
-
-If you want to install **RenPy** as a library from the source:
-
-```sh
-pip install .
-```
-
-Then, you can use it in Python scripts like this:
-
-```python
-from renpy import renFn
-renFn("Sample", Path("/path/to/files"), "alphabet", False, False)
-```
-
 ## **🤝 Contributing**
 
 We welcome contributions! Please check the [CONTRIBUTING.md](https://github.com/MFM-347/Ren.py/blob/main/CONTRIBUTING.md) for guidelines.
