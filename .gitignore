@@ -172,3 +172,10 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+# action files
+**/node_modules
+**/package-lock.json
+**/package.json
+**/.prettierrc
+**/.prettierignore

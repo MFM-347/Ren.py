@@ -3,12 +3,12 @@ name: format
 on:
   push:
     paths:
-      - "**/*.{md,json}"
+      - "**/*.{md,json,py}"
     branches:
       - main
   pull_request:
     paths:
-      - "**/*.{md,json}"
+      - "**/*.{md,json,py}"
     branches:
       - main
   workflow_dispatch:
@@ -25,6 +25,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: "16"
+
       - name: Configure Prettier
         run: |
           echo '{
@@ -39,9 +40,26 @@ jobs:
         run: |
           npm i -D prettier
 
-      - name: Format all files
+      - name: Format JSON and Markdown
         run: |
           npx prettier -w **/*.{md,json}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Install Flake8 and Black
+        run: |
+          pip install flake8 black
+
+      - name: format python
+        run: |
+          black .
+
+      - name: lint python
+        run: |
+          flake8 . --config .flake8
 
       - name: Clean up unnecessary files
         run: |
@@ -57,3 +75,6 @@ jobs:
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
+          git add .
+          git diff --quiet && git diff --staged --quiet || git commit -m "Apply formatting and linting"
+          git push

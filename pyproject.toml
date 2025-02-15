@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+
+[project]
+name = "renpy"
+version = "0.9.7"
+description = "RenPy is a Python CLI tool for renaming files efficiently."
+readme = "README.md"
+authors = [{ name = "Farhan Madni", email = "madnifm347@outlook.com" }]
+license = { file = "LICENSE" }
+classifiers = [
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3",
+]
+keywords = ["renamer", "cli", "auto", "automation", "automatic", "python", "opensource"]
+dependencies = [
+  "pyfiglet"
+]
+requires-python = ">=3.9"
+
+[project.optional-dependencies]
+dev = ["black", "flake8", "bumpver", "isort"]
+
+[project.urls]
+Homepage = "https://github.com/MFM-347/Ren.py"
+
+[project.scripts]
+renpy = "renpy.cli:cli_main"
