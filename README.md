@@ -4,11 +4,13 @@ RenPy is a **Python library and CLI tool** designed to **automate file renaming*
 
 ## **📌 Features**
 
-✔ **Batch Rename**: Rename multiple files at once with a custom prefix.
-✔ **Sorting Options**: Rename files in alphabetical, newest, or oldest order.
-✔ **Simulation Mode**: Preview renaming changes without modifying files.
-✔ **Library Support**: Use RenPy in your Python scripts for automation.
-✔ **Cross-Platform**: Works on Windows, macOS, and Linux.
+| Feature             | Availability | Description                                                                   |
+| ------------------- | ------------ | ----------------------------------------------------------------------------- |
+| **Batch Rename**    | ✔           | Rename multiple files at once with a custom prefix.                           |
+| **Sorting Options** | ✔           | Rename files in alphabetical, newest, or oldest order.                        |
+| **Simulation Mode** | ✔           | Preview renaming changes without modifying files. No actual changes are made. |
+| **Library Support** | ✔           | Use RenPy as a module in your Python scripts for automation.                  |
+| **Cross-Platform**  | ✔           | Works seamlessly on Windows, macOS, and Linux.                                |
 
 ## **🛠️ Prerequisites**
 
@@ -157,16 +159,21 @@ Run all tests:
 python -m unittest discover tests
 ```
 
+## Future Plans
+
+- Add option to rename only specific file type.
+- Add Graphic User Interface (GUI).
+
 ## **🤝 Contributing**
 
 We welcome contributions! Please check the [CONTRIBUTING.md](https://github.com/MFM-347/Ren.py/blob/main/CONTRIBUTING.md) for guidelines.
+
+## **👨‍💻 Credits**
+
+Created and maintained by [MFM-347](https://github.com/MFM-347).
 
 ## **📜 License**
 
 This project is licensed under the **MIT License**.
 
 [![License MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/MFM-347/Ren.py/LICENSE)
-
-## **👨‍💻 Credits**
-
-Created and maintained by [MFM-347](https://github.com/MFM-347).
