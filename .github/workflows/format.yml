@@ -3,12 +3,12 @@ name: format
 on:
   push:
     paths:
-      - "**/*"
+      - "**/*.{md,json}"
     branches:
       - main
   pull_request:
     paths:
-      - "**/*"
+      - "**/*.{md,json}"
     branches:
       - main
   workflow_dispatch:
@@ -31,35 +31,25 @@ jobs:
             "semi": false,
             "singleQuote": true,
             "tabWidth": 2,
-            "printWidth": 120,
-            "plugins": [
-              "prettier-plugin-tailwindcss",
-              "prettier-plugin-organize-imports"
-            ]
+            "printWidth": 100
           }' > .prettierrc
-          echo 'dist
-          *.min.*
-          .github/**/*
-          *-min.*' > .prettierignore
+          echo '.github/**/*' > .prettierignore
 
       - name: Install Prettier with plugins
         run: |
-          npm i -D prettier prettier-plugin-tailwindcss prettier-plugin-organize-imports
+          npm i -D prettier
 
       - name: Format all files
         run: |
-          npx prettier -w .
+          npx prettier -w **/*.{md,json}
 
       - name: Clean up unnecessary files
         run: |
           rm -rf node_modules
           rm -f .prettierrc
           rm -f .prettierignore
-          npm uninstall prettier prettier-plugin-tailwindcss prettier-plugin-organize-imports
-
-      - name: Format all files
-        run: |
-          npx prettier -w .
+          rm -f package.json
+          rm -f package-lock.json
 
       - name: Commit changes
         env:

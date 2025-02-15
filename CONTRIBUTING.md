@@ -1,13 +1,13 @@
-# Contributing to RepoLate
+# Contributing to RenPy
 
-Thank you for considering contributing to RepoLate! 🎉  
+Thank you for considering contributing to RenPy! 🎉
 Your contributions, whether big or small, are essential to the success of this project. We welcome **bug reports**, **feature requests**, **documentation updates**, and **code improvements**.
 
 ## Contribution Guide
 
 ### Step 1: Fork the Repository
 
-1. Navigate to the [RepoLate repository](https://github.com/MFM-347/RepoLate).
+1. Navigate to the [RenPy repository](https://github.com/MFM-347/Ren.py).
 2. Click the **Fork** button in the top-right corner to create your own copy of the repository.
 
 ### Step 2: Clone Your Fork
@@ -15,22 +15,29 @@ Your contributions, whether big or small, are essential to the success of this p
 Clone your forked repository to your local machine:
 
 ```bash
-git clone https://github.com/<your-username>/RepoLate.git
-cd RepoLate
+git clone https://github.com/<your-username>/RenPy.git
+cd RenPy
 ```
 
 ### Step 3: Set Up Your Environment
 
+Ensure you have Python installed (Python 3.7+ recommended). Set up a virtual environment:
+
+```bash
+python -m venv venv
+source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
+```
+
 Install the required dependencies:
 
 ```bash
-npm install
+pip install -r requirements.txt
 ```
 
-Ensure everything is working by running the project locally:
+Ensure everything is working by running the CLI tool:
 
 ```bash
-npm run dev
+python renpy/cli.py --help
 ```
 
 ### Step 4: Create a Branch
@@ -44,38 +51,50 @@ git checkout -b <branch-name>
 Examples:
 
 - `fix-typo-in-readme`
-- `feature-add-dark-mode`
+- `feature-add-new-command`
 - `enhance-error-handling`
 
 ### Step 5: Make Your Changes
 
-- Update the code, fix bugs, or implement new features in the `src` folder.
+- Update the code, fix bugs, or implement new features in the `renpy` folder.
 - Ensure your changes:
   - Are properly documented.
   - Adhere to coding best practices and project conventions.
   - Are accompanied by relevant test cases, if applicable.
 
-### Step 6: Build the Project
+### Step 6: Run and Test Your Changes
 
-After making your changes, rebuild the project to generate updated files:
+- Run the project to test functionality:
 
 ```bash
-npm run build
+python renpy/cli.py <your-arguments>
 ```
 
-### Step 7: Test Your Changes
+- Run unit tests using `unittest`:
 
-- Thoroughly test your changes to ensure they work as expected.
-- Use the local development server (`npm run dev`) to verify functionality.
-- If applicable, run automated tests to confirm your changes don’t break existing functionality.
+```bash
+python -m unittest discover tests
+```
 
-### Step 8: Commit Your Work
+- Check code formatting using `black`:
+
+```bash
+black .
+```
+
+- Check for linting errors using `flake8`:
+
+```bash
+flake8 renpy/
+```
+
+### Step 7: Commit Your Work
 
 Commit your changes with a clear and descriptive commit message:
 
 ```bash
 git add .
-git commit -m "feat: Add dark mode toggle"
+git commit -m "feat: Add new renaming option"
 ```
 
 Use [Conventional Commits](https://www.conventionalcommits.org/) format for consistency:
@@ -87,7 +106,7 @@ Use [Conventional Commits](https://www.conventionalcommits.org/) format for cons
 - `refactor`: Code refactoring
 - `test`: Adding or updating tests
 
-### Step 9: Push and Submit a Pull Request
+### Step 8: Push and Submit a Pull Request
 
 Push your branch to your fork:
 
@@ -95,27 +114,27 @@ Push your branch to your fork:
 git push origin <branch-name>
 ```
 
-Then, navigate to the **original RepoLate repository** and submit a pull request.  
+Then, navigate to the **original RenPy repository** and submit a pull request.
 Include the following in your PR description:
 
 - A summary of changes.
 - Related issue IDs (e.g., "Closes #123").
-- Screenshots or videos (if applicable).
+- Screenshots or logs (if applicable).
 
 ## Reporting Issues
 
-Encountered a bug or have a great idea for a new feature? Create an issue [here](https://github.com/MFM-347/RepoLate/issues).
+Encountered a bug or have a great idea for a new feature? Create an issue [here](https://github.com/MFM-347/Ren.py/issues).
 
 ### Guidelines for Issues:
 
-- **Bug Reports**:  
+- **Bug Reports**:
   Include:
 
   - Steps to reproduce the issue.
   - Expected vs. actual behavior.
-  - Relevant screenshots or logs (if available).
+  - Relevant error logs or stack traces.
 
-- **Feature Requests**:  
+- **Feature Requests**:
   Describe:
   - The feature and its use case.
   - Any benefits or improvements it will bring.
@@ -127,7 +146,8 @@ To maintain a high-quality codebase, please follow these guidelines:
 1. **Coding Style**:
 
    - Use clean, consistent, and readable code.
-   - Follow the existing project conventions.
+   - Follow PEP 8 coding standards.
+   - Use `black` for code formatting.
 
 2. **Commit Practices**:
 
@@ -146,7 +166,7 @@ To maintain a high-quality codebase, please follow these guidelines:
 
 If you’re unsure about something or need guidance:
 
-- Start a [discussion](https://github.com/MFM-347/RepoLate/discussions).
+- Start a [discussion](https://github.com/MFM-347/Ren.py/discussions).
 - Join our community for support and collaboration.
 
-Thank you ✨ for contributing to RepoLate! Your effort makes this project better for everyone.
+Thank you ✨ for contributing to RenPy! Your effort makes this project better for everyone.
