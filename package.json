@@ -1,0 +1,15 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "Repository template",
+  "homepage": "https://github.com/MFM-347/RepoLate#readme",
+  "bugs": {
+    "url": "https://github.com/MFM-347/RepoLate/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MFM-347/RepoLate.git"
+  },
+  "license": "MIT",
+  "author": "MFM-347"
+}
